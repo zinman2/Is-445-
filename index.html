@@ -17,18 +17,16 @@
     </body>
     <script>
         mySpec = {
-  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Year Constructed vs Square Footage.",
   "data": {"url": "https://learn.illinois.edu/pluginfile.php/8418693/mod_resource/content/1/building_inventory.csv"},
-  "mark": "bar",
+  "mark": "point",
   "encoding": {
-    "x": {
-      "bin": true,
-      "field": "Year Constructed",
-      "type": "quantitative"
-    },
-    "y": {
-      "aggregate": "Square Footage",
-      "type": "quantitative"
+    "x": {"field": "Year Constructed", "type": "quantitative"},
+    "y": {"field": "Square Footage", "type": "quantitative"}
+  }
+}
     }
   }
 }
