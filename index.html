@@ -17,20 +17,22 @@
     </body>
     <script>
         mySpec = {
-    "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-    "data": {
-        "values": [
-            {"A": 20, "B": 21, "C": 2},
-            {"A": 30, "B": 20, "C": 4},
-            {"A": 25, "B": 15, "C": 6},
-            {"A": 5, "B": 30, "C": 8}
-        ]
+    {
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "data": {"url": "https://learn.illinois.edu/pluginfile.php/8418693/mod_resource/content/1/building_inventory.csv"},
+  "mark": "bar",
+  "encoding": {
+    "x": {
+      "bin": true,
+      "field": "Year Constructed",
+      "type": "quantitative"
     },
-    "mark": "circle",
-    "encoding": {
-        "x": { "field": "A", "type": "quantitative"},
-        "y": { "field": "B", "type": "quantitative"},
-        "size": { "field": "C", "type": "quantitative"}
+    "y": {
+      "aggregate": "count",
+      "type": "quantitative"
+    }
+  }
+}
     }
 };
         vegaEmbed('#myviz', mySpec);
