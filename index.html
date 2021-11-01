@@ -17,13 +17,16 @@
     </body>
     <script>
         mySpec = {
-  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "description": "Temp Description.",
   "data": {"url": "build_inventory.json"},
-  "mark": "point",
+  "mark": "boxplot",
   "encoding": {
-    "x": {"field": "Year Constructed", "type": "quantitative"},
-    "y": {"field": "Square Footage", "type": "quantitative"}
+    "x": {"field": "Total Floors", "type": "quantitative"},
+    "color": {"field": "Total Floors", "type": "quantitative", "legend": null},
+    "y": {
+      "field": "Square Footage",
+      "type": "quantitative",
+      "scale": {"zero": false}
+    }
   }
 }
         vegaEmbed('#myviz', mySpec);
